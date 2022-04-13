@@ -14,14 +14,6 @@ void insertionSort(int* arr, int size){
     }
 }
 
-int smallValue(int* arr, int size){
-    int smallest = arr[0];
-    for (int i=1; i<size; i++){
-        if (arr[i] < smallest)
-            smallest = arr[i];
-    }
-}
-
 void printArray(const int *arr, int size){
     for (int i=0; i<size; i++){
         cout << arr[i] << " ";
