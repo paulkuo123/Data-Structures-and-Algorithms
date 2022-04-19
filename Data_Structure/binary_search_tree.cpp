@@ -4,12 +4,10 @@
 using namespace std;
 
 class Node{
-    private:
-        int key;
-        Node* left;
-        Node* right;
-
     public:
+    int key;
+    Node* left;
+    Node* right;
     Node(int key):key(key), left(0), right(0){};
     friend class BinarySearchTree;
 };
@@ -19,6 +17,8 @@ class BinarySearchTree{
         Node* root;
         BinarySearchTree():root(nullptr){};
         void treeInsert(int z);
+        Node* searchRecursively(Node* n, int key);
+        Node* searchIteratively(Node* n, int key);
         void preOrder(Node *n);
         void inOrder(Node *n);
         void postOrder(Node *n);
@@ -48,6 +48,37 @@ void BinarySearchTree::treeInsert(int z){
     else{
         y->right = newNode;
     }
+}
+
+Node* BinarySearchTree::searchRecursively(Node* n, int key){
+    if (n == nullptr || key == n->key){
+        return n;
+    }
+    else if (key < n->key){
+        return searchRecursively(n->left, key);
+    }
+    else{
+        return searchRecursively(n->right, key);
+    }
+}
+
+Node* BinarySearchTree::searchIteratively(Node* n, int key){
+    while (n != nullptr && key != n->key)
+    {
+        if (key < n->key){
+            n = n->left;
+        }
+        else{
+            n = n->right;
+        }
+    }
+    if (n == nullptr){
+        cout << "Node not found" << endl;
+    }
+    else{
+        cout << "Node found" << endl;
+    }
+    return n;
 }
 
 void BinarySearchTree::preOrder(Node* n){
@@ -104,6 +135,8 @@ int main(){
     bst.treeInsert(13);
     bst.treeInsert(-7);
     bst.treeInsert(3);
-    bst.bftt(bst.root);
+    // bst.bftt(bst.root);
+    Node* result = bst.searchIteratively(bst.root, -15);
+    cout << result->key << endl;
     return 0;
 }
