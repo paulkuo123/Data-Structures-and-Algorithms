@@ -79,7 +79,7 @@ void Stack::pop(){
     }
 }
 
-main()
+int main()
 {
     Stack myStack;
     myStack.pushBack(1);

@@ -166,7 +166,7 @@ int LinkedList::get(int index){
     return currentNode->value;
 }
 
-main()
+int main()
 {
     int a = -1;
     LinkedList list;
