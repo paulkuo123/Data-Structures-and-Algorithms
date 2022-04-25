@@ -106,8 +106,6 @@ void MinHeap::maxHeapify(int i){
     }
 }
 
-
-
 void Dijkstra(Node allNodes[], Node* node){
     node->distanceFromStartNode = 0;
     node->visited = true;

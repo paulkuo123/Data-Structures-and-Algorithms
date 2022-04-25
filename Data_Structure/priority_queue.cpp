@@ -98,7 +98,7 @@ void PriorityQueue::maxHeapify(int i){
 void PriorityQueue::printAll(){
     while (!this->values.empty())
     {
-        Node* result = dequeue();         
+        Node* result = dequeue();
         cout << result->value << endl;
     }
 }
