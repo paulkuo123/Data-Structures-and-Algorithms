@@ -133,7 +133,7 @@ void NQueens(int n){
 }
 
 int main(){
-    NQueens(8);
+    NQueens(4);
 
     cout << "Number of Perfect Solution is " << perfect << endl;
     return 0;
